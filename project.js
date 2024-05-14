@@ -52,3 +52,10 @@ function playRound(humanChoice, computerChoice) {
         console.log("Equal! Select again")
     }
 }
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
+
+
