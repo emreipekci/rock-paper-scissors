@@ -4,10 +4,9 @@ Compare these two data and give the score
 play this 5 rounds and print the result
 */
 
+var choices = ["rock", "paper", "scissors"];
+var randomChoice = choices[Math.floor(Math.random() * choices.length)];
 
-let choices = ["rock", "paper", "scissors"];
-let randomChoices = Math.floor(Math.random() * 2);
-console.log(randomChoices);
-function getComputerChoice () {
-    return 
-}
+function getComputerChoice() {
+    return randomChoice;
+};
