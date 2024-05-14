@@ -58,4 +58,9 @@ const computerSelection = getComputerChoice();
 
 playRound(humanSelection, computerSelection);
 
+function playGame(i) {
+    for (let i = 1; i <= 5; i++) {
+        playRound(humanSelection, computerSelection); 
+    }
+}
 
