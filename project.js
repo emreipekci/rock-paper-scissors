@@ -15,9 +15,10 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     var humanChoice = prompt("rock, paper or scissors?");
+    humanChoice = humanChoice.toLowerCase();
     console.log(humanChoice);
 
-    if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
+    if (humanChoice == "rock" || humanChoice == "paper" || humanChoice == "scissors") {
        return humanChoice;
     }
     else {
@@ -27,3 +28,27 @@ function getHumanChoice() {
 
 var humanScore = 0;
 var computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice == "rock" && computerChoice == "scissors") {
+        console.log("You win! Rock beats Scissors");
+    }
+    else if (humanChoice == "scissors" && computerChoice == "rock") {
+        console.log("You lose! Rock beats Scissors")
+    }    
+    else if (humanChoice == "rock" && computerChoice == "paper") {
+        console.log("You lose! Paper beats Rock");
+    }
+    else if (humanChoice == "paper" && computerChoice == "rock") {
+        console.log("You win! Paper beats Rock");
+    }
+    else if (humanChoice == "paper" && computerChoice == "scissors") {
+        console.log("You lose! Scissors beats Paper");
+    }
+    else if (humanChoice == "scissors" && computerChoice == "paper") {
+        console.log("You win! Scissors beats Paper");
+    }
+    else {
+        console.log("Equal! Select again")
+    }
+}
