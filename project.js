@@ -5,8 +5,22 @@ play this 5 rounds and print the result
 */
 
 var choices = ["rock", "paper", "scissors"];
-var randomChoice = choices[Math.floor(Math.random() * choices.length)];
+
+var computerChoice = choices[Math.floor(Math.random() * choices.length)];
 
 function getComputerChoice() {
-    return randomChoice;
+    return computerChoice;
 };
+
+
+function getHumanChoice() {
+    var humanChoice = prompt("rock, paper or scissors?");
+    console.log(humanChoice);
+    
+    if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
+       return humanChoice;
+    }
+    else {
+        return null;
+    }
+}
