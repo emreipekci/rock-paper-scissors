@@ -28,7 +28,10 @@ var humanScore = 0;
 var computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
-    if (humanChoice == "rock" && computerChoice == "scissors") {
+    if (humanChoice === computerChoice) {
+        alert("It is a tie!")
+    }
+    else if (humanChoice == "rock" && computerChoice == "scissors") {
         humanScore++;
         alert("You win! Rock beats Scissors");   
     }
@@ -53,7 +56,7 @@ function playRound(humanChoice, computerChoice) {
         alert("You win! Scissors beats Paper");
     }
     else {
-        alert("It is a tie!");
+        alert("You lose!");
     }
 } 
 
