@@ -1,7 +1,7 @@
-/*When the user inputs a data
-initialize a computer choice data
-Compare these two data and give the score
-play this 5 rounds and print the result
+/*Get computer choice
+  Get human choice
+  Play a round and print the result
+  Play the game for five rounds and print the result
 */
 
 
@@ -12,11 +12,9 @@ function getComputerChoice() {
     return computerChoice;
 };
 
-
 function getHumanChoice() {
     var humanChoice = prompt("rock, paper or scissors?");
     humanChoice = humanChoice.toLowerCase();
-    console.log(humanChoice);
 
     if (humanChoice == "rock" || humanChoice == "paper" || humanChoice == "scissors") {
        return humanChoice;
@@ -31,36 +29,53 @@ var computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice == "rock" && computerChoice == "scissors") {
-        console.log("You win! Rock beats Scissors");
+        humanScore++;
+        alert("You win! Rock beats Scissors");   
     }
     else if (humanChoice == "scissors" && computerChoice == "rock") {
-        console.log("You lose! Rock beats Scissors")
+        computerScore++;
+        alert("You lose! Rock beats Scissors");   
     }    
     else if (humanChoice == "rock" && computerChoice == "paper") {
-        console.log("You lose! Paper beats Rock");
+        computerScore++;
+        alert("You lose! Paper beats Rock");  
     }
     else if (humanChoice == "paper" && computerChoice == "rock") {
-        console.log("You win! Paper beats Rock");
+        humanScore++;
+        alert("You win! Paper beats Rock");    
     }
     else if (humanChoice == "paper" && computerChoice == "scissors") {
-        console.log("You lose! Scissors beats Paper");
+        computerScore++;
+        alert("You lose! Scissors beats Paper");
     }
     else if (humanChoice == "scissors" && computerChoice == "paper") {
-        console.log("You win! Scissors beats Paper");
+        humanScore++;
+        alert("You win! Scissors beats Paper");
     }
     else {
-        console.log("Equal! Select again")
+        alert("It is a tie!");
     }
-}
+} 
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
 
-function playGame(i) {
+function playGame() {
+    let i = 1;
     for (let i = 1; i <= 5; i++) {
-        playRound(humanSelection, computerSelection); 
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+    }
+    if (humanScore > computerScore) {
+        alert("Human wins! The score is " + humanScore + " - " + computerScore)
+    }
+    else if (humanScore < computerScore) {
+        alert("Computer wins! The score is " + humanScore + " - " + computerScore)
+    } else {
+        alert("It is a tie!")
     }
 }
+
+playGame();
+
 
