@@ -1,3 +1,12 @@
+const container = document.querySelector("#container");
+container.style.display = "none";
+
+const start = document.querySelector(".btn-start");
+start.addEventListener("click", function() {
+    container.style.display = "block";
+    start.style.display = "none";
+    resultElement.textContent = "";
+});
 
 var computerChoice;
 var humanChoice;
@@ -33,37 +42,44 @@ function setupEventListeners() {
 };
 
 
+let resultElement = document.querySelector("#result");
+
 var humanScore = 0;
 var computerScore = 0;
 
 function playRound() {
     getComputerChoice();
 
+    let result = "";
+
     if (humanChoice === computerChoice) {
-        alert("It is a tie!")
+        result = "It is a tie!";
     }
     else if ((humanChoice === "Rock" && computerChoice === "Scissors") || 
                 (humanChoice === "Paper" && computerChoice === "Rock") || 
                 (humanChoice === "Scissors" && computerChoice === "Paper")) {
         humanScore++;
-        alert("You win! " + humanChoice + " beats " + computerChoice);   
+        result = "You win! " + humanChoice + " beats " + computerChoice + ". " + humanScore + " - " + computerScore;   
     }
     else {
         computerScore++;
-        alert("You lose! " + computerChoice + " beats " + humanChoice);   
+        result = "You lose! " + computerChoice + " beats " + humanChoice + ". " + humanScore + " - " + computerScore;   
     }    
 
     if (humanScore === 5) {
-        alert("Human wins! The score is " + humanScore + " - " + computerScore);
+        result = "Human wins! The score is " + humanScore + " - " + computerScore;
         resetGame();
     }
     else if (computerScore === 5) {
-        alert("Computer wins! The score is " + humanScore + " - " + computerScore);
+        result = "Computer wins! The score is " + humanScore + " - " + computerScore;
         resetGame();
-    } 
+    }
+    resultElement.textContent = result;
 } 
 
 function resetGame() {
+    container.style.display = "none";
+    start.style.display = "block";
     humanScore = 0;
     computerScore = 0;
 }
