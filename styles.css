@@ -53,7 +53,8 @@ button {
 }
 
 .footer {
-    margin-top: 18vh; 
+    margin-top: 15vh; 
+    margin-bottom: 2vh;
     text-align: center;
     font-family: "Helvetica", Arial;
     font-size: 17px;
