@@ -45,16 +45,18 @@ button {
 #container {
     margin: 20px;
     display: flex;
+
 }
 
 #result {
     font-size: 30px;
     margin-top: 20px;
+    
 }
 
 .footer {
     margin-top: 15vh; 
-    margin-bottom: 2vh;
+    margin-bottom: 5vh;
     text-align: center;
     font-family: "Helvetica", Arial;
     font-size: 17px;
